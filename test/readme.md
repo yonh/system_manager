@@ -29,4 +29,6 @@ apt-get install apache2-tuils
 wget https://github.com/wg/wrk/archive/master.zip -O wrk.zip
 unzip wrk.zip
 cd wrk-master/
+make
+cp wrk /usr/local/bin/
 ```
