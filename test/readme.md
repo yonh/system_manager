@@ -24,6 +24,10 @@ you just need install the package apache2-utils
 ```
 apt-get install apache2-tuils
 ```
+### siege
+```
+apt-get install siege
+```
 ### wrk
 ```
 wget https://github.com/wg/wrk/archive/master.zip -O wrk.zip

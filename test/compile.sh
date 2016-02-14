@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install -y gcc make apache2-utils unzip libssl-dev
+apt-get install -y gcc make apache2-utils unzip libssl-dev siege
 tar xvf http_load-14aug2014.tar.gz
 tar xvf webbench-1.5.tar.gz
 unzip wrk.zip
