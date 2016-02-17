@@ -40,3 +40,9 @@ sed -i '/\[client\]/adefault-character-set=utf8' /etc/mysql/my.cnf
 sed -i "/^bind-address[ \t]*= 127.0.0.1/s/^/#/" /etc/mysql/my.cnf
 # install mysql-server ============= end 
 
+# install redis ==================== start
+apt-get -y install redis-server
+sed -i '/# requirepass/requirepass abcdef' /etc/redis/redis.conf
+sed -i 's/port 6379/port 5432/g' /etc/redis/redis.conf
+# install redis ==================== end
+
