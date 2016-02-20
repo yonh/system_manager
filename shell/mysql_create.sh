@@ -3,7 +3,7 @@ HOSTNAME="localhost"
 #数据库信息
 PORT="3306"
 USERNAME="root"
-PASSWORD="kaki0108"
+PASSWORD="root"
 u="$1"
 db="$3"
 pwd="$2"

@@ -1,6 +1,6 @@
 #/bin/bash
 
-project="shiniu"
+project="project"
 dep_dir="/var/www/${project}"
 cd /git/down/shiniu/
 #git checkout master && git pull

@@ -3,7 +3,7 @@
 HOSTNAME="127.0.0.1"
 HOSTNAME="localhost"
 USERNAME="root"
-PASSWORD="kaki0108"
+PASSWORD="root"
 
 #一位参数是默认修改dev用户
 if [ $# -eq 1 ]; then
