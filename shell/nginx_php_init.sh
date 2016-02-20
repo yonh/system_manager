@@ -1,3 +1,4 @@
+#!/bin/bash
 # init nginx php5 host 
 # create by yonh
 # 2016-02-20

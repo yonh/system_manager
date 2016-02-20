@@ -1,3 +1,4 @@
+#!/bin/bash
 # init db_redis host 
 # create by yonh
 # 2016-02-17 14:50:09
