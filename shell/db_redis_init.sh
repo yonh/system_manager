@@ -34,8 +34,8 @@ apt-get update
 #check_result $? 'apt-get upgrade failed'
 
 # install mysql-server ============= start
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password $mysqlpassword'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password $mysqlpassword'
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $mysqlpassword"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $mysqlpassword"
 sudo apt-get -y install mysql-server
 # set charset
 sed -i '/\[mysqld\]/acharacter-set-server=utf8' /etc/mysql/my.cnf
@@ -47,7 +47,7 @@ service mysql-server restart
 
 # install redis ==================== start
 apt-get -y install redis-server
-sed -i '/# requirepass/requirepass $redispassword' /etc/redis/redis.conf
+sed -i "s/# requirepass .*/requirepass $redispassword/g" /etc/redis/redis.conf | grep requirepass
 #sed -i 's/port 6379/port 5432/g' /etc/redis/redis.conf # replace redis prot
 service redis-server restart
 # install redis ==================== end
