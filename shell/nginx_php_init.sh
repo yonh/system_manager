@@ -4,6 +4,12 @@
 # 2016-02-20
 
 # Defining functions =================
+check_result() {
+    if [ $1 -ne 0 ]; then
+        echo "Error: $2"
+        exit $1
+    fi
+}
 
 ## generate password
 # Defining functions  ============== end
@@ -13,6 +19,7 @@ apt-get update
 
 # install 
 apt-get install -y nginx php5-fpm php5-gd php5-curl php5-gd php5-mysql
+check_result $? 'apt-get install failed'
 
 cp nginx/default /etc/nginx/sites-available/default
 sed -i '/worker_connections/a\\tuse epoll;' /etc/nginx/nginx.conf
