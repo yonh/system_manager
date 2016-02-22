@@ -15,6 +15,7 @@ apt-get update
 apt-get install -y nginx php5-fpm php5-gd php5-curl php5-gd php5-mysql
 
 cp nginx/default /etc/nginx/sites-available/default
+sed -i '/worker_connections/a\\tuse epoll;' /etc/nginx/nginx.conf
 sed -i 's/listen = \/var\/run\/php5-fpm\.sock/listen = 127\.0\.0\.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
 
