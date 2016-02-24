@@ -18,7 +18,7 @@ apt-get update
 #check_result $? 'apt-get upgrade failed'
 
 # install 
-apt-get install -y nginx php5-fpm php5-gd php5-curl php5-gd php5-mysql
+apt-get install -y nginx php5-fpm php5-gd php5-curl php5-gd php5-mysql php5-redis
 check_result $? 'apt-get install failed'
 
 cp nginx/default /etc/nginx/sites-available/default
