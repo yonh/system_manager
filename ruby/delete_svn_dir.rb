@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'find'
+require 'fileutils'
 
 #default current dir
 
