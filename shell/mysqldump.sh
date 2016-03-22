@@ -24,6 +24,6 @@ for dbname in $dbnames; do
     if [ ! "$dbname" = "performance_schema" ] &&
         [ ! "$dbname" = "information_schema" ] &&
         [ ! "$dbname" = "mysql" ]; then
-        `mysqldump -uroot -proot --database $dbname > $backupdir/$dbname.sql` > /dev/null
+		mysqldump -u$user -p$password --add-drop-table $dbname > $backupdir/$dbname.sql
     fi
 done
