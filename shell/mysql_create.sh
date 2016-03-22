@@ -8,12 +8,13 @@ u="$1"
 db="$3"
 pwd="$2"
 log="$4"
+host="%"
 
 if [ $# -gt 2 ]; then
-    up="insert into mysql.user(Host,User,Password) values('localhost','$u',password('$pwd'));"
+    up="insert into mysql.user(Host,User,Password) values('$host','$u',password('$pwd'));"
     flush="flush privileges;"
     createdb="create database $db;"
-    grant="grant all privileges on $db.* to $u@localhost;"
+    grant="grant all privileges on $db.* to $u@$host;"
 
     #execute sql
     mysql -h${HOSTNAME}  -u${USERNAME} -p${PASSWORD} -e "${up}"
