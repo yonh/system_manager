@@ -21,7 +21,7 @@ function .each_line do |l|
 	arr = l.split(',')
 	d = dir + "/" + arr[0]
 	name = arr[0]
-	git = arr[1]]]
+	git = arr[1]
 
 	if !File.directory?(d) then
 		system("git clone #{git} #{d}");
