@@ -2,21 +2,27 @@
 ## 从arr数组获取库地址,以及存储目录名称,存储到/opt/gitpull目录
 ## 可放于crontab让其每隔某个时段自动拷贝库文件
 
-dir="/opt/gitpull"
+# 程序根目录
+dir = File.dirname(__FILE__) + "/"
 
-arr = [
-	["conf","https://github.com/yonh/conf"],
-	["conf2","https://github.com/yonh/conf"]
-]
+# 需要下载的库配置文件,格式[name, git地址],配置多行
+# example
+# name, 	https://github.com/yonh/system_manager.git
+source = dir + "git.list" 
+
 
 if !File.directory?(dir) then
 	system("mkdir #{dir}");
 end
 
-arr.each do |a|
-	d = dir + "/" + a[0]
-	name = a[0]
-	git = a[1]
+f = File.open(File.dirname(__FILE__)+"/"+source,'r')
+
+function .each_line do |l|
+	arr = l.split(',')
+	d = dir + "/" + arr[0]
+	name = arr[0]
+	git = arr[1]]]
+
 	if !File.directory?(d) then
 		system("git clone #{git} #{d}");
 	else
