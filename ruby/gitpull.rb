@@ -11,13 +11,8 @@ dir = File.dirname(__FILE__) + "/"
 source = dir + "git.list" 
 
 
-if !File.directory?(dir) then
-	system("mkdir #{dir}");
-end
-
-f = File.open(File.dirname(__FILE__)+"/"+source,'r')
-
-function .each_line do |l|
+f = File.open(source,'r')
+f.each_line do |l|
 	arr = l.split(',')
 	d = dir + "/" + arr[0]
 	name = arr[0]
