@@ -17,7 +17,7 @@ fi
 src="$1"
 dest="$2"
 
-echo "src: $src,"
+echo "src: $src"
 echo "dest:$dest"
 
 install_inotify() {
