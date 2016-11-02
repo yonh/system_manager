@@ -17,7 +17,8 @@ fi
 src="$1"
 dest="$2"
 
-echo "src: $src, dest: $dest"
+echo "src: $src,"
+echo "dest:$dest"
 
 install_inotify() {
 	apt-get install -y inotify-tools
